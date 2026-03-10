@@ -2,129 +2,81 @@
 
 [![CI](https://github.com/anmolnagpal/platform-agency-agents/actions/workflows/ci.yml/badge.svg)](https://github.com/anmolnagpal/platform-agency-agents/actions/workflows/ci.yml)
 
-> Opinionated AI agent roster for platform engineering teams: Terraform landing zones, multi-cloud operations, GitHub Actions delivery, Kubernetes runtime, security & compliance assurance, and technical enablement.
+> Complete platform-engineering AI agency: Terraform landing zones, GitHub Actions delivery, Kubernetes runtime, security/compliance assurance, and developer enablement.
 
-## Why This Exists
-
-Shipping infra today means juggling IaC, delivery, runtime, and governance disciplines. Platform Agency packages deep-specialist agents (with code, workflows, and evidence gates) so you can activate a complete DevSecOps program inside Claude Code, Cursor, Windsurf, Aider, Gemini CLI, or any other agentic IDE.
-
-- **Platform-first:** Every agent owns a concrete slice of the stack (Terraform, Actions, K8s, SOC2) with deliverables you can run.
-- **Control-loop orchestration:** Built around the CONTROL LOOP (Assess → Architect → Automate → Assure) so multiple agents can collaborate without chaos.
-- **Batteries included:** Sample Terraform root module, reusable GitHub Actions workflow, compliance mappings, and orchestration runbooks.
+**Why teams install this**
+- Deep-specialist agents (Terraform, Actions, K8s, SOC2, docs) with runnable snippets and evidence gates.
+- CONTROL LOOP operating model (Assess → Architect → Automate → Assure) keeps multi-agent work in sync.
+- Ready-to-ship artifacts: Terraform root module, reusable Actions workflow, compliance mappings, runbooks.
+- Works everywhere: Claude Code, Cursor, Windsurf, Aider, Gemini CLI, Copilot Chat, OpenCode.
 
 ## Quick Start
+1. `./scripts/convert.sh` – regenerate tool-specific integrations in `integrations/`.
+2. `./scripts/install.sh` (or `--tool <name>`) – copy agents into Claude Code, Cursor, Windsurf, Aider, Gemini CLI, Antigravity, OpenCode.
+3. Open `strategy/QUICKSTART.md` and follow the CONTROL LOOP prompts to coordinate Terraform → CI/CD → Kubernetes → Compliance handoffs.
 
-1. **Browse agents** across the divisions below and copy the ones you need.
-2. **Install into your tool** (Claude/Cursor/etc.) via the conversion scripts:
-   ```bash
-   ./scripts/convert.sh        # regenerate integrations
-   ./scripts/install.sh        # interactive installer
-   ./scripts/install.sh --tool cursor   # or target a single tool
-   ```
-3. **Activate the CONTROL LOOP** using the prompts in `strategy/QUICKSTART.md` to coordinate Terraform → CI/CD → Kubernetes → Compliance workflows.
+### Option 1: Claude Code (Recommended)
+```bash
+./scripts/convert.sh
+cp integrations/claude-code/*.md ~/.claude/agents/
+# or ./scripts/install.sh --tool claude-code
+```
+Say “Hey Claude, activate <Agent Name>” in a session and start shipping.
 
-## Divisions & Agents
+### Option 2: Use as Reference
+Browse any agent Markdown file to grab:
+- Identity + mission
+- Critical rules + workflow
+- Deliverables with CLI/Terraform/YAML examples
+- Communication style + success metrics
 
-| Division | Description | Agents |
+### Option 3: Other Tools (Cursor, Aider, Windsurf, Gemini CLI, OpenCode)
+```bash
+./scripts/convert.sh
+./scripts/install.sh --tool cursor      # writes .cursor/rules/*.mdc
+./scripts/install.sh --tool aider       # writes CONVENTIONS.md
+./scripts/install.sh --tool windsurf    # writes .windsurfrules
+./scripts/install.sh --tool gemini-cli  # installs ~/.gemini/extensions/agency-devops/
+./scripts/install.sh --tool opencode    # creates .opencode/agent/
+```
+
+## Agent Roster
+
+| Division | Agents | Use when you need… |
 | --- | --- | --- |
-| **Foundation** | Landing zones, Terraform, multi-cloud, baseline identity/network | [Terraform Platform Architect](foundation/foundation-terraform-platform-architect.md), [Multi-Cloud Operator](foundation/foundation-multicloud-operator.md) |
-| **Delivery** | CI/CD architecture, GitHub Actions, release automation | [GitHub Actions Engineer](delivery/delivery-cicd-github-actions-engineer.md), [Release Automation Lead](delivery/delivery-release-automation-lead.md) |
-| **Runtime** | Kubernetes platforms, observability, SRE | [Kubernetes Platform Engineer](runtime/runtime-kubernetes-platform-engineer.md), [Observability Architect](runtime/runtime-sre-observability-architect.md) |
-| **Assurance** | Security controls, compliance mapping, audits | [Cloud Security Engineer](assurance/assurance-cloud-security-engineer.md), [Compliance Control Mapper](assurance/assurance-compliance-control-mapper.md) |
-| **Enablement** | Documentation, platform adoption, developer experience | [DevOps Technical Writer](enablement/enablement-devops-technical-writer.md), [Enablement Coach](enablement/enablement-coach.md) |
+| **Foundation** | [Landing Zone Builder](foundation/foundation-terraform-platform-architect.md) · [Multi-Cloud Navigator](foundation/foundation-multicloud-operator.md) | Landing zones, identity/network baselines, multi-cloud guardrails. |
+| **Delivery** | [Pipeline Orchestrator](delivery/delivery-cicd-github-actions-engineer.md) · [Release Captain](delivery/delivery-release-automation-lead.md) | CI/CD topologies, promotion policy, ChatOps deploys, rollback rehearsals. |
+| **Runtime** | [Kubernetes Platform Builder](runtime/runtime-kubernetes-platform-engineer.md) · [Observability Lead](runtime/runtime-sre-observability-architect.md) | Cluster blueprints, GitOps, SLO dashboards, incident response. |
+| **Assurance** | [Cloud Security Guard](assurance/assurance-cloud-security-engineer.md) · [Compliance Evidence Lead](assurance/assurance-compliance-control-mapper.md) | SOC2 / ISO mappings, policy-as-code gates, evidence packs. |
+| **Enablement** | [Platform Technical Writer](enablement/enablement-devops-technical-writer.md) · [Enablement Coach](enablement/enablement-coach.md) | Adoption guides, platform onboarding, stakeholder communications. |
 
-Each Markdown file includes identity, core mission, critical rules, deliverables (with Terraform/CLI/YAML snippets), workflow process, communication style, success metrics, and advanced capabilities.
+Each agent ships identity, mission, rules, workflow, deliverables, comms style, learning loop, metrics, and advanced capabilities.
 
-## CONTROL LOOP Strategy
+## CONTROL LOOP Plays
+- **Regulated SaaS zero-to-prod** – Landing Zone Builder + Pipeline Orchestrator + Kubernetes Platform Builder + Compliance Evidence Lead turn up landing zone → CI/CD → K8s → audit evidence (see `examples/control-loop-zero-to-prod.md`).
+- **Incident-ready release train** – Release Captain + Observability Lead rehearse ChatOps deploys, SLO checks, rollback bundles using the delivery + runtime agents.
+- **Security drift clamp-down** – Cloud Security Guard + Landing Zone Builder run drift scans, generate policy patches, and feed results into Assurance gate.
+- **Developer adoption surge** – Enablement Coach + Platform Technical Writer convert the roster into onboarding playbooks and scorecards.
 
-`strategy/QUICKSTART.md` introduces CONTROL LOOP:
+## Templates & Proof
+- `templates/terraform-root-module/` – remote state, workspaces, policy hooks.
+- `templates/github-actions/monorepo-ci.yml` – lint → unit → integration → OPA/policy workflow.
+- `strategy/CONTROL-LOOP.md` + `strategy/QUICKSTART.md` – orchestration prompts.
+- `strategy/runbooks/` – scenario handbooks for Terraform, Actions, K8s, Compliance.
 
-1. **Assess** – Terraform drift, threat models, compliance deltas.
-2. **Architect** – Platform blueprints, GitHub Actions topology, service mesh decisions.
-3. **Automate** – IaC modules, CI/CD pipelines, GitOps deployments.
-4. **Assure** – Security scans, evidence packs, SLO burn reviews, audit handoffs.
-
-Use the ready-made prompts to spin up multi-agent pipelines (Terraform → Actions → K8s → Compliance) with evidence gates at every handoff. Deep dive docs live in `strategy/CONTROL-LOOP.md` and scenario runbooks under `strategy/runbooks/`.
-
-## Templates & Examples
-
-- `templates/terraform-root-module/` – Opinionated root module with remote state, workspaces, and policy hooks.
-- `templates/github-actions/monorepo-ci.yml` – Reusable workflow covering lint → unit → integration → OPA/policy.
-- `examples/control-loop-zero-to-prod.md` – Traces how the roster ships a regulated SaaS platform from scratch.
-
-## Integrations
-
-Run `./scripts/convert.sh` to build tool-specific packages in `integrations/`:
-
-- `claude-code/` `.md` agents
-- `cursor/` `.mdc` rules
-- `aider/` `CONVENTIONS.md`
-- `windsurf/` `.windsurfrules`
-- `gemini-cli/` extension skills
-- `antigravity/` skills
-- `opencode/` agent files
-
-Then `./scripts/install.sh` copies the right assets into your environment (auto-detect + TUI just like the Agency repo).
-
-## Install in Your Tool
-
-Once `integrations/` is generated, you can install the agents anywhere—even manually. Here are the most common setups:
-
-- **Claude Code**  
-  ```bash
-  ./scripts/install.sh --tool claude-code
-  # copies .md agents to ~/.claude/agents/
-  ```
-  Activate any agent inside Claude Code with “Use <Agent Name>”.
-
-- **Cursor**  
-  ```bash
-  ./scripts/install.sh --tool cursor
-  # creates .cursor/rules/<agent>.mdc in your project
-  ```
-  Cursor automatically ingests `.cursor/rules/` on open.
-
-- **Windsurf**  
-  ```bash
-  ./scripts/install.sh --tool windsurf
-  # drops .windsurfrules into the repo root
-  ```
-  Windsurf loads `.windsurfrules` as always-on guidance.
-
-- **Aider**  
-  ```bash
-  ./scripts/install.sh --tool aider
-  # writes CONVENTIONS.md (all agents merged) to the repo root
-  ```
-  Start Aider normally; it will read the conventions file.
-
-- **Gemini CLI**  
-  ```bash
-  ./scripts/install.sh --tool gemini-cli
-  # installs a Gemini CLI extension under ~/.gemini/extensions/agency-devops/
-  ```
-  Then run `gemini skill list` to verify the new skills.
-
-- **Antigravity**  
-  ```bash
-  ./scripts/install.sh --tool antigravity
-  # copies agency-* skills into ~/.gemini/antigravity/skills/
-  ```
-
-- **OpenAI / GitHub Copilot Chat**  
-  Copy any agent `.md` into `.github/copilot-instructions.md` (or paste it directly into a Copilot custom instruction). The agents were written to be drop-in instructions, so Copilot Chat, Copilot Workspace, or Playground sessions can use them without conversion.
-
-- **Manual usage**  
-  Grab the Markdown file you need, paste it into your agentic IDE (Windsurf, Gemini, Copilot, etc.), and follow the workflow prompts—no tooling required.
+## Multi-Tool Install Cheat Sheet
+- `claude-code` – copies `.md` agents to `~/.claude/agents/`.
+- `cursor` – creates `.cursor/rules/*.mdc` per agent.
+- `windsurf` – writes `.windsurfrules` to repo root.
+- `aider` – exports merged `CONVENTIONS.md`.
+- `gemini-cli` – installs extension under `~/.gemini/extensions/agency-devops/`.
+- `antigravity` – copies skills to `~/.gemini/antigravity/skills/`.
+- `opencode` – drops agent pack into `.opencode/`.
+- `manual` – copy/paste any agent Markdown into your IDE instructions.
 
 ## Contributing
+- Follow the agent template in `CONTRIBUTING.md`.
+- Provide runnable artifacts + success metrics for every deliverable.
+- Run `./scripts/lint-agents.sh` (and any template-specific tests) before PRs.
 
-See `CONTRIBUTING.md` for the agent template, control-loop guardrails, and lint/test commands. TL;DR:
-
-- Follow the standard agent sections (identity, mission, rules, deliverables, workflow, comms, learning, metrics, advanced).
-- Provide runnable artifacts (Terraform snippets, workflow YAML, CLI commands) and success metrics.
-- Run `./scripts/lint-agents.sh` plus any template-specific tests before opening a PR.
-
----
-
-MIT License. 
+MIT License.

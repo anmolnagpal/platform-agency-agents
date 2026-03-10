@@ -23,7 +23,7 @@ Every agent file is Markdown with YAML frontmatter:
 
 ```markdown
 ---
-name: Terraform Platform Architect
+name: Landing Zone Builder
 description: Builds secure landing zones & IaC guardrails
 color: indigo
 ---

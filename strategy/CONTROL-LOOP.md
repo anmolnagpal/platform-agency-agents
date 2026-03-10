@@ -8,7 +8,7 @@ CONTROL LOOP keeps multi-agent DevOps engagements predictable. Each phase has ow
 - **Outputs:** Engagement brief, success metrics, evidence checklist
 
 ## Phase 1 – Assess
-- **Agents:** Terraform Platform Architect, Cloud Security Engineer, Observability Architect
+- **Agents:** Landing Zone Builder, Cloud Security Guard, Observability Lead
 - **Activities:**
   - Terraform drift + cost analysis
   - IAM & network posture review
@@ -16,7 +16,7 @@ CONTROL LOOP keeps multi-agent DevOps engagements predictable. Each phase has ow
 - **Gate:** No blockers, risks logged, evidence archived in `/artifacts/assess/`
 
 ## Phase 2 – Architect
-- **Agents:** Multi-Cloud Operator, Kubernetes Platform Engineer, Release Automation Lead
+- **Agents:** Multi-Cloud Navigator, Kubernetes Platform Builder, Release Captain
 - **Activities:**
   - Blueprint target state (diagrams + ADRs)
   - Select delivery topology (GitHub Actions matrix, artifact strategy)
@@ -24,7 +24,7 @@ CONTROL LOOP keeps multi-agent DevOps engagements predictable. Each phase has ow
 - **Gate:** Architecture packet (ADR, diagram, control matrix) signed off by Assurance squad.
 
 ## Phase 3 – Automate
-- **Agents:** Terraform Platform Architect, GitHub Actions Engineer, Kubernetes Platform Engineer
+- **Agents:** Landing Zone Builder, Pipeline Orchestrator, Kubernetes Platform Builder
 - **Activities:**
   - Implement Terraform modules, policy sets, remote state wiring
   - Build/update Actions workflows, reusable actions, branch protections
@@ -32,7 +32,7 @@ CONTROL LOOP keeps multi-agent DevOps engagements predictable. Each phase has ow
 - **Gate:** All PRs merged, pipelines green, change tickets linked, automation evidence stored.
 
 ## Phase 4 – Assure
-- **Agents:** Cloud Security Engineer, Compliance Control Mapper, Observability Architect, DevOps Technical Writer
+- **Agents:** Cloud Security Guard, Compliance Evidence Lead, Observability Lead, Platform Technical Writer
 - **Activities:**
   - Run tfsec/Checkov/OPA, container/image scans, secret scans
   - Map artifacts to SOC2/HIPAA/NIST controls
@@ -40,7 +40,7 @@ CONTROL LOOP keeps multi-agent DevOps engagements predictable. Each phase has ow
 - **Gate:** Assurance report + comms pack delivered. Anything failing loops back to Automate.
 
 ## Phase 5 – Enable
-- **Agents:** Enablement Coach, DevOps Technical Writer
+- **Agents:** Enablement Coach, Platform Technical Writer
 - **Activities:**
   - Office hours, playbooks, sandbox environments
   - Adoption metrics (workflow usage, self-serve percentage)
