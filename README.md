@@ -125,10 +125,6 @@ See `CONTRIBUTING.md` for the agent template, control-loop guardrails, and lint/
 - Provide runnable artifacts (Terraform snippets, workflow YAML, CLI commands) and success metrics.
 - Run `./scripts/lint-agents.sh` plus any template-specific tests before opening a PR.
 
-## Legacy Creative Agency
-
-The original creative/marketing-focused agents now live in `legacy-agency/`. We kept them for inspiration but they are excluded from the new control loop.
-
 ---
 
 MIT License. 
