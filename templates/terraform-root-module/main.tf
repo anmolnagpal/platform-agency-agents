@@ -32,9 +32,9 @@ provider "google" {
 module "network" {
   source = "./modules/network"
 
-  aws_cidr = var.aws_cidr
+  aws_cidr   = var.aws_cidr
   azure_cidr = var.azure_cidr
-  gcp_cidr = var.gcp_cidr
+  gcp_cidr   = var.gcp_cidr
 }
 
 module "identity" {
